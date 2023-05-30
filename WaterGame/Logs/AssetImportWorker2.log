@@ -1,0 +1,325 @@
+Using pre-set license
+Built from '2022.2/staging' branch; Version is '2022.2.6f1 (10bfa6201ced) revision 1097638'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'ja' Physical Memory: 32509 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\2022.2.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/user/3D Objects/ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—/local/Clearest2023/WaterGame
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+50402
+Successfully changed project path to: C:/Users/user/3D Objects/ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—/local/Clearest2023/WaterGame
+C:/Users/user/3D Objects/ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—/local/Clearest2023/WaterGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [35768] Host "[IP] 192.168.11.14 [Port] 0 [Flags] 2 [Guid] 1495779814 [EditorId] 1495779814 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-L2RC10L) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [35768] Host "[IP] 192.168.11.14 [Port] 0 [Flags] 2 [Guid] 1495779814 [EditorId] 1495779814 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-L2RC10L) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 12.18 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.2.6f1 (10bfa6201ced)
+[Subsystems] Discovering subsystems at path C:/Program Files/2022.2.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/user/3D Objects/ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—/local/Clearest2023/WaterGame/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2216)
+    Vendor:   NVIDIA
+    VRAM:     10067 MB
+    Driver:   31.0.15.3161
+Initialize mono
+Mono path[0] = 'C:/Program Files/2022.2.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/2022.2.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/2022.2.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56084
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/2022.2.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.008587 seconds.
+- Loaded All Assemblies, in  0.408 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.359 seconds
+Domain Reload Profiling:
+	ReloadAssembly (241ms)
+		BeginReloadAssembly (96ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		LoadAllAssembliesAndSetupDomain (0ms)
+			LoadAssemblies (93ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (157ms)
+				TypeCache.Initialize (156ms)
+					TypeCache.ScanAssembly (154ms)
+				ResolveRequiredComponents (1ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (277ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (10ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (188ms)
+				ProcessInitializeOnLoadMethodAttributes (64ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\user\3D Objects\ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—\local\Clearest2023\WaterGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\user\3D Objects\ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—\local\Clearest2023\WaterGame\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.130 seconds
+Refreshing native plugins compatible for Editor in 4.70 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.725 seconds
+Domain Reload Profiling:
+	ReloadAssembly (269ms)
+		BeginReloadAssembly (143ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (21ms)
+		LoadAllAssembliesAndSetupDomain (857ms)
+			LoadAssemblies (315ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (600ms)
+				TypeCache.Initialize (357ms)
+					TypeCache.ScanAssembly (351ms)
+				ResolveRequiredComponents (6ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (524ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (396ms)
+				ProcessInitializeOnLoadMethodAttributes (24ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 3.32 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3424 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (67.2 KB). Loaded Objects now: 3892.
+Memory consumption went from 0.52 GB to 0.52 GB.
+Total: 2.953900 ms (FindLiveObjects: 0.224700 ms CreateObjectMapping: 0.116100 ms MarkObjects: 2.479200 ms  DeleteObjects: 0.133000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1206280.690723 seconds.
+  path: Assets/MagicArsenal/Effects/Materials/Beams
+  artifactKey: Guid(9ceafcf9ff6269e41820113d40087162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Materials/Beams using Guid(9ceafcf9ff6269e41820113d40087162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbbd288007f8cce865c1be80ddfe0105') in 0.001846 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.071509 seconds.
+  path: Assets/MagicArsenal/Effects/Materials/Beams/arcanebeam.mat
+  artifactKey: Guid(6b27fba9c4dfa454caf8f3aa92c28a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Materials/Beams/arcanebeam.mat using Guid(6b27fba9c4dfa454caf8f3aa92c28a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88480a831b13d4db120df14be3be9069') in 0.149806 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 12.969784 seconds.
+  path: Assets/MagicArsenal/Demo
+  artifactKey: Guid(335dae17206a0e248b2c4d3651009259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Demo using Guid(335dae17206a0e248b2c4d3651009259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a88305b0d247e8ae53b0af7126f9ef0d') in 0.000521 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.090008 seconds.
+  path: Assets/MagicArsenal/Demo/Effect Prefabs
+  artifactKey: Guid(36d450342faf41f4294316584c657ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Demo/Effect Prefabs using Guid(36d450342faf41f4294316584c657ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8165173e6587edd288df4e7a228a30a1') in 0.000531 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.353452 seconds.
+  path: Assets/MagicArsenal/Readme.txt
+  artifactKey: Guid(d0c24544632f5ff468c2d3cc4641a897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Readme.txt using Guid(d0c24544632f5ff468c2d3cc4641a897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccb55ac01532689c264e0b7f543c74e1') in 0.001123 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 14.196712 seconds.
+  path: Assets/MagicArsenal/Effects/Scripts
+  artifactKey: Guid(734ffd8ca766ca44ea8be725d4572429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Scripts using Guid(734ffd8ca766ca44ea8be725d4572429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48e3b37032f6d56053ede320ad376cd1') in 0.000527 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.959542 seconds.
+  path: Assets/MagicArsenal/Effects/Scripts/MagicBeamStatic.cs
+  artifactKey: Guid(ab65db61b0cbd7f4bb2afcba7e37d8ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Scripts/MagicBeamStatic.cs using Guid(ab65db61b0cbd7f4bb2afcba7e37d8ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '554f7d7ab341b7d5385c08befba7ecd3') in 0.000619 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 23.940054 seconds.
+  path: Assets/MagicArsenal/Effects/Models
+  artifactKey: Guid(d0df15e66f37ab9489d12810d55ba11e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models using Guid(d0df15e66f37ab9489d12810d55ba11e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32fcbc747b4925a48b917b588340de27') in 0.000486 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.069015 seconds.
+  path: Assets/MagicArsenal/Effects/Models/aura_flat.FBX
+  artifactKey: Guid(364eab5adac0b444380f64060123d5bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models/aura_flat.FBX using Guid(364eab5adac0b444380f64060123d5bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d134c85fe9d56cd140876c5b9afad0b') in 0.072729 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/MagicArsenal/Effects/Models/mp_plane.FBX
+  artifactKey: Guid(cffd22707eee67548aae595eca29342b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models/mp_plane.FBX using Guid(cffd22707eee67548aae595eca29342b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '528b48fd7e5279e19e5997387ab9964f') in 0.018846 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/MagicArsenal/Effects/Models/mp_shield.FBX
+  artifactKey: Guid(1aa60d6d8e1bb1445b0486ffb8b130fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models/mp_shield.FBX using Guid(1aa60d6d8e1bb1445b0486ffb8b130fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b716a220418f3ab93542fd07ad92377') in 0.021860 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/MagicArsenal/Effects/Models/aura_straight.FBX
+  artifactKey: Guid(124296fd140e75741befe7d19e5a0538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models/aura_straight.FBX using Guid(124296fd140e75741befe7d19e5a0538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8798adebcc47dc049451ab123e390c9') in 0.023638 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/MagicArsenal/Effects/Models/rock_shield.FBX
+  artifactKey: Guid(971b43b4a28bd724cb3388d10cab7a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models/rock_shield.FBX using Guid(971b43b4a28bd724cb3388d10cab7a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfae922cee2801e11c0d4b77b898afb9') in 0.017619 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 11.486162 seconds.
+  path: Assets/MagicArsenal/Effects/Models/Materials
+  artifactKey: Guid(cadb72a798db0364190eec25e7226622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models/Materials using Guid(cadb72a798db0364190eec25e7226622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fba2346d79a1e60f9f319ccbce745b28') in 0.000524 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.077433 seconds.
+  path: Assets/MagicArsenal/Effects/Models/Materials/MagicProjectiles.mat
+  artifactKey: Guid(3c2166e448126a545b5140cccbd33266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models/Materials/MagicProjectiles.mat using Guid(3c2166e448126a545b5140cccbd33266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88f94ffa427ca9462f1bb1da62de241d') in 0.015239 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/MagicArsenal/Effects/Models/Materials/verticalglow02.mat
+  artifactKey: Guid(0309b321872611d49911c38c9ccfe10b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Models/Materials/verticalglow02.mat using Guid(0309b321872611d49911c38c9ccfe10b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f1bbf7ff60d0ca5faaa6fa6669c99a8') in 0.047716 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 13.516307 seconds.
+  path: Assets/MagicArsenal/Effects/Materials/Cleave
+  artifactKey: Guid(fc5f759400149f54d8b46bc7e572f959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Materials/Cleave using Guid(fc5f759400149f54d8b46bc7e572f959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00e1771d3c2ce92df2445bc9ba53b173') in 0.000596 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.049243 seconds.
+  path: Assets/MagicArsenal/Effects/Materials/Cleave/cleave_arcane.mat
+  artifactKey: Guid(c6724d73f4c8d394dacce9f124f055a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Materials/Cleave/cleave_arcane.mat using Guid(c6724d73f4c8d394dacce9f124f055a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd534ef6c674f356c3c8ed2d5aa68ac13') in 0.012792 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/MagicArsenal/Effects/Materials/Cleave/cleave_life.mat
+  artifactKey: Guid(8289d653baea06b418cceae1b3cecca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MagicArsenal/Effects/Materials/Cleave/cleave_life.mat using Guid(8289d653baea06b418cceae1b3cecca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d1b8b1c3cb7155673558ec6b765cd88') in 0.049111 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ƒXƒŒƒbƒh‚ÌI—¹‚Ü‚½‚ÍƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ì—v‹‚É‚æ‚Á‚ÄAI/O ˆ—‚Í’†~‚³‚ê‚Ü‚µ‚½B
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

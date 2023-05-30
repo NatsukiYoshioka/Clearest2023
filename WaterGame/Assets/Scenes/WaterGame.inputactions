@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Beam",
+                    "type": "Button",
+                    "id": "a9286184-13c6-4f00-b7a7-e2daa209f6ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -221,8 +230,19 @@
                 },
                 {
                     "name": "",
+                    "id": "9b115178-d11d-4a6c-b332-a447f159690b",
+                    "path": "<HID::JC-U3613M - DirectXInput Mode>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b9c2fff1-ab4a-464d-a3e1-fa5b02961de2",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<HID::JC-U3613M - DirectXInput Mode>/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -238,6 +258,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "97876c04-d8c8-4a05-babe-d97359d9132b",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc45214f-4e65-4f3a-8e5a-c6d2f9f5ceef",
+                    "path": "<HID::JC-U3613M - DirectXInput Mode>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Beam",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

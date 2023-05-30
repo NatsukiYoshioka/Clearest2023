@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 103972302952929235}
   - component: {fileID: 103972302952929237}
   - component: {fileID: 103972302952929238}
-  - component: {fileID: 103972302952929239}
-  - component: {fileID: 8761300880593016321}
+  - component: {fileID: 40598032596204940}
+  - component: {fileID: 8535535732270131093}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -31,12 +31,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103972302952929196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.10028815, y: 0.28363502, z: 2.610023}
+  m_LocalPosition: {x: -0.10028815, y: 2.86, z: 2.610023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 103972303863292884}
   - {fileID: 103972304032711143}
+  - {fileID: 7827271833271627148}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,8 +110,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0
+  m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &103972302952929237
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 103972302952929239}
+      - m_Target: {fileID: 40598032596204940}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -159,12 +160,24 @@ MonoBehaviour:
     m_ActionId: eaf8a18c-6dce-411f-8d77-964c533db247
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8535535732270131093}
+        m_TargetAssemblyTypeName: FireBullet, Assembly-CSharp
+        m_MethodName: OnFire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ac5d1703-1f2b-405e-a227-332d70ffc8e6
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 103972302952929239}
+      - m_Target: {fileID: 40598032596204940}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -249,7 +262,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &103972302952929239
+--- !u!114 &40598032596204940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -258,15 +271,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 103972302952929196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bcd4af293c84846919261c6f5f2bc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ce8758d5315de3439a9c58076873a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 6
-  _jumpSpeed: 9
-  _gravity: 20
+  _speed: 3
+  _jumpSpeed: 7
+  _gravity: 15
   _fallSpeed: 10
   _initFallSpeed: 2
---- !u!114 &8761300880593016321
+--- !u!114 &8535535732270131093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,11 +288,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 103972302952929196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b184ac66a4afb40bce68681be54a1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 68a77fc5e10b792489c36c30d5afae25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   firingPoint: {fileID: 103972304032711136}
-  bullet: {fileID: 8221527971591322055, guid: c131dbee5bd02ad43bcd39ef2a7b8372, type: 3}
+  WaterSmall: {fileID: 6242087640740651954, guid: 7565cbe798f8f344587bfe641f80c185, type: 3}
+  effectNormal: {x: 0, y: 0, z: 0}
   speed: 30
 --- !u!1 &103972303863292885
 GameObject:
@@ -410,7 +424,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103972304032711136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.050288152, y: 0.076364994, z: 0.9799769}
+  m_LocalPosition: {x: 0.050288152, y: 0.65, z: 1.6}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 103972302952929232}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8669867709594638756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7827271833271627148}
+  m_Layer: 0
+  m_Name: SliderPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7827271833271627148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669867709594638756}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.10028815, y: 2.16, z: 0.061158657}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
