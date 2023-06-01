@@ -450,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8981574201566381757, guid: 81451d12a7ae1174798543011034e69c, type: 3}
       propertyPath: waterFeed
-      value: 0.075
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8981574201566381757, guid: 81451d12a7ae1174798543011034e69c, type: 3}
       propertyPath: waterTank

@@ -67,7 +67,7 @@ public class FireBullet : MonoBehaviour
     }
     public void OnFire(InputAction.CallbackContext context)
     {
-        if (!context.performed||_beam) return;
+        if (!context.performed||_beam||waterTank.value<10.0f) return;
         _fire = true;
     }
 
