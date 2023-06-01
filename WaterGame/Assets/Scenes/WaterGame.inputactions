@@ -275,7 +275,7 @@
                 {
                     "name": "",
                     "id": "dc45214f-4e65-4f3a-8e5a-c6d2f9f5ceef",
-                    "path": "<HID::JC-U3613M - DirectXInput Mode>/button7",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

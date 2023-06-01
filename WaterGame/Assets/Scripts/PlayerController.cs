@@ -76,13 +76,14 @@ public class PlayerController : MonoBehaviour
         }
 
         _isGroundedPrev = isGrounded;
-
+        
         // 操作入力と鉛直方向速度から、現在速度を計算
         var moveVelocity = new Vector3(
             _inputMove.x * _speed,
             _verticalVelocity,
             _inputMove.y * _speed
         );
+
         // 現在フレームの移動量を移動速度から計算
         var moveDelta = moveVelocity * Time.deltaTime;
 
@@ -91,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
         if (_inputMove != Vector2.zero)
         {
+            
             // 移動入力がある場合は、振り向き動作も行う
 
             // 操作入力からy軸周りの目標角度[deg]を計算

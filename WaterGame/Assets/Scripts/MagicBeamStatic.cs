@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Scripts
 {
@@ -13,14 +14,13 @@ public class MagicBeamStatic : MonoBehaviour
     public GameObject beamLineRendererPrefab; //Put a prefab with a line renderer onto here.
     //public GameObject beamStartPrefab; //This is a prefab that is put at the start of the beam.
     public GameObject beamEndPrefab; //Prefab put at end of beam.
+    public Slider waterTank;
 
     //private GameObject beamStart;
     private GameObject beamEnd;
     private GameObject beam;
     private LineRenderer line;
     private Vector3 end;
-
-        private bool _isPressed;
 
     [Header("Beam Options")]
     //public bool alwaysOn = true; //Enable this to spawn the beam when script is loaded.
@@ -36,6 +36,19 @@ public class MagicBeamStatic : MonoBehaviour
     {
         if (beam) //Updates the beam
         {
+            waterTank.value -= 0.3f;
+            if(waterTank.value <= 10)
+            {
+                    beamLength -= 0.5f;
+            }
+            else
+            {
+                beamLength = 10;
+            }
+            if (waterTank.value <= 5.0f)
+            {
+                RemoveBeam();
+            }
             line.SetPosition(0, transform.position);
 
             RaycastHit hit;
@@ -64,19 +77,22 @@ public class MagicBeamStatic : MonoBehaviour
         }
     }
 
-    public void OnEnable(InputAction.CallbackContext context)
-    {
+        public void OnEnable(InputAction.CallbackContext context)
+        {
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                SpawnBeam();
+                if(waterTank.value>10.0f)
+                {
+                    SpawnBeam();
+                }
                 break;
 
             case InputActionPhase.Canceled:
                 RemoveBeam();
                 break;
         }
-    }
+        }
 
         public void SpawnBeam() //This function spawns the prefab with linerenderer
     {
