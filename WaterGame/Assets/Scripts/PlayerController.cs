@@ -6,6 +6,15 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private string horizontalString;
+
+    [SerializeField]
+    private string verticalString;
+
+    [SerializeField]
+    private string jumpString;
+
     [Header("移動の速さ"), SerializeField]
     private float _speed = 3;
 
@@ -24,11 +33,12 @@ public class PlayerController : MonoBehaviour
     private Transform _transform;
     private CharacterController _characterController;
 
-    private Vector2 _inputMove;
+    //private Vector2 _inputMove;
     private float _verticalVelocity;
     private float _turnVelocity;
     private bool _isGroundedPrev;
 
+    /*
     /// <summary>
     /// 移動Action(PlayerInput側から呼ばれる)
     /// </summary>
@@ -37,7 +47,9 @@ public class PlayerController : MonoBehaviour
         // 入力値を保持しておく
         _inputMove = context.ReadValue<Vector2>();
     }
+    */
 
+    /*
     /// <summary>
     /// ジャンプAction(PlayerInput側から呼ばれる)
     /// </summary>
@@ -49,16 +61,28 @@ public class PlayerController : MonoBehaviour
         // 鉛直上向きに速度を与える
         _verticalVelocity = _jumpSpeed;
     }
+    */
 
     private void Awake()
     {
+        Application.targetFrameRate = 60; // 60fpsに設定
         _transform = transform;
         _characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
     {
+        //地面に立っているかどうか
         var isGrounded = _characterController.isGrounded;
+
+        //移動判定
+        var _inputMove = new Vector3(Input.GetAxis(horizontalString), 0f, -Input.GetAxis(verticalString));
+
+        //ジャンプ判定
+        if(Input.GetButtonDown(jumpString)&&isGrounded)
+        {
+            _verticalVelocity= _jumpSpeed;
+        }
 
         if (isGrounded && !_isGroundedPrev)
         {
@@ -81,7 +105,7 @@ public class PlayerController : MonoBehaviour
         var moveVelocity = new Vector3(
             _inputMove.x * _speed,
             _verticalVelocity,
-            _inputMove.y * _speed
+            _inputMove.z * _speed
         );
 
         // 現在フレームの移動量を移動速度から計算
@@ -90,13 +114,13 @@ public class PlayerController : MonoBehaviour
         // CharacterControllerに移動量を指定し、オブジェクトを動かす
         _characterController.Move(moveDelta);
 
-        if (_inputMove != Vector2.zero)
+        if (_inputMove != Vector3.zero)
         {
             
             // 移動入力がある場合は、振り向き動作も行う
 
             // 操作入力からy軸周りの目標角度[deg]を計算
-            var targetAngleY = -Mathf.Atan2(_inputMove.y, _inputMove.x)
+            var targetAngleY = -Mathf.Atan2(_inputMove.z, _inputMove.x)
                 * Mathf.Rad2Deg + 90;
 
             // イージングしながら次の回転角度[deg]を計算

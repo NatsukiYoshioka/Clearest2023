@@ -10,7 +10,10 @@ namespace Scripts
 public class MagicBeamStatic : MonoBehaviour
 {
 
-    [Header("Prefabs")]
+        [SerializeField]
+        private string fire2String;
+
+        [Header("Prefabs")]
     public GameObject beamLineRendererPrefab; //Put a prefab with a line renderer onto here.
     //public GameObject beamStartPrefab; //This is a prefab that is put at the start of the beam.
     public GameObject beamEndPrefab; //Prefab put at end of beam.
@@ -21,6 +24,7 @@ public class MagicBeamStatic : MonoBehaviour
     private GameObject beam;
     private LineRenderer line;
     private Vector3 end;
+        private bool _beam = false;
 
     [Header("Beam Options")]
     //public bool alwaysOn = true; //Enable this to spawn the beam when script is loaded.
@@ -34,30 +38,46 @@ public class MagicBeamStatic : MonoBehaviour
 
     void FixedUpdate()
     {
+            //ビームが発射されているかどうか
+            if(Input.GetButton(fire2String)&& waterTank.value > 10.0f&&!_beam)
+            {
+                SpawnBeam();
+                _beam = true;
+            }
+            if(Input.GetButtonUp(fire2String))
+            {
+                RemoveBeam();
+                _beam=false;
+            }
         if (beam) //Updates the beam
         {
             waterTank.value -= 0.3f;
             if(waterTank.value <= 10)
             {
-                    beamLength -= 0.5f;
+                    beamLength =waterTank.value;
             }
             else
             {
                 beamLength = 10;
             }
-            if (waterTank.value <= 5.0f)
+            if (waterTank.value <= 2.0f)
             {
                 RemoveBeam();
             }
             line.SetPosition(0, transform.position);
 
             RaycastHit hit;
-            if (beamCollides && Physics.Raycast(transform.position, transform.forward, out hit)) //Checks for collision
-                end = hit.point - (transform.forward * beamEndOffset);
+                if (beamCollides && Physics.Raycast(transform.position, transform.forward, out hit)) //Checks for collision
+                    end = hit.point; //- (transform.forward * beamEndOffset);
             else
                 end = transform.position + (transform.forward * beamLength);
 
-            line.SetPosition(1, end);
+                float distance = Vector3.Distance(transform.position, end);
+                if(distance>10f)
+                {
+                    end = transform.position + (transform.forward * beamLength);
+                }
+                line.SetPosition(1, end);
             /*
             if (beamStart)
             {
@@ -71,12 +91,12 @@ public class MagicBeamStatic : MonoBehaviour
                 //beamEnd.transform.LookAt(beamStart.transform.position);
             }
 
-            float distance = Vector3.Distance(transform.position, end);
             line.material.mainTextureScale = new Vector2(distance / textureLengthScale, 1); //This sets the scale of the texture so it doesn't look stretched
             line.material.mainTextureOffset -= new Vector2(Time.deltaTime * textureScrollSpeed, 0); //This scrolls the texture along the beam if not set to 0
         }
     }
 
+        /*
         public void OnEnable(InputAction.CallbackContext context)
         {
         switch (context.phase)
@@ -93,6 +113,8 @@ public class MagicBeamStatic : MonoBehaviour
                 break;
         }
         }
+        */
+
 
         public void SpawnBeam() //This function spawns the prefab with linerenderer
     {

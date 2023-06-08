@@ -7,6 +7,12 @@ using UnityEngine.UI;
 public class FireBullet : MonoBehaviour
 {
     [SerializeField]
+    private string fire1String;
+
+    [SerializeField]
+    private string fire2String;
+
+    [SerializeField]
     [Tooltip("弾の発射場所")]
     private GameObject firingPoint;
 
@@ -23,8 +29,6 @@ public class FireBullet : MonoBehaviour
     [Tooltip("弾の速さ")]
     private float speed = 30f;
 
-    //Actionをインスペクターから編集できるようにする
-    private bool _fire = false;
     private bool _beam = false;
 
     // Update is called once per frame
@@ -38,14 +42,29 @@ public class FireBullet : MonoBehaviour
         {
             waterTank.value += waterFeed;
         }
-        if (_fire && waterTank.value >= 10.0f)
+        else if(waterTank.value<=10)
         {
-            _fire = false;
+            waterTank.value += waterFeed;
+        }
+        //水球の発射
+        if (Input.GetButtonDown(fire1String) && waterTank.value >= 10.0f && !_beam)
+        {
             // 弾を発射する
             BulletShot();
         }
+
+        //ビームが発射されているかの処理
+        if(Input.GetButton(fire2String)&& waterTank.value > 10.0f)
+        {
+            _beam = true;
+        }
+        if(Input.GetButtonUp(fire2String))
+        {
+            _beam = false;
+        }
     }
 
+    /*
     public void OnBeam(InputAction.CallbackContext context)
     {
         switch (context.phase)
@@ -65,11 +84,15 @@ public class FireBullet : MonoBehaviour
                 break;
         }
     }
+    */
+
+    /*
     public void OnFire(InputAction.CallbackContext context)
     {
         if (!context.performed||_beam||waterTank.value<10.0f) return;
         _fire = true;
     }
+    */
 
     /// <summary>
 	/// 弾の発射
