@@ -52,14 +52,7 @@ public class MagicBeamStatic : MonoBehaviour
         if (beam) //Updates the beam
         {
             waterTank.value -= 0.3f;
-            if(waterTank.value <= 10)
-            {
-                    beamLength =waterTank.value;
-            }
-            else
-            {
-                beamLength = 10;
-            }
+            
             if (waterTank.value <= 2.0f)
             {
                 RemoveBeam();
