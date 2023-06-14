@@ -44,7 +44,7 @@ public class MagicBeamStatic : MonoBehaviour
                 SpawnBeam();
                 _beam = true;
             }
-            if(Input.GetButtonUp(fire2String))
+            if(!Input.GetButton(fire2String))
             {
                 RemoveBeam();
                 _beam=false;
