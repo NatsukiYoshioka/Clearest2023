@@ -30,6 +30,12 @@ public class PlayerController : MonoBehaviour
     [Header("落下の初速"), SerializeField]
     private float _initFallSpeed = 2;
 
+    [Header("地面の位置"),SerializeField]
+    private GameObject GroundHeight;
+
+    [Header("プレイヤーオブジェクト"), SerializeField]
+    private GameObject myGameObject;
+
     private Transform _transform;
     private CharacterController _characterController;
 
@@ -133,6 +139,11 @@ public class PlayerController : MonoBehaviour
 
             // オブジェクトの回転を更新
             _transform.rotation = Quaternion.Euler(0, angleY, 0);
+        }
+
+        if(GroundHeight.transform.position.y-10>_transform.position.y)
+        {
+            Destroy(myGameObject);
         }
     }
 }

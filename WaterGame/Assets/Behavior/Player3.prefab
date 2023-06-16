@@ -38,7 +38,7 @@ Transform:
   - {fileID: 8859659879704996331}
   - {fileID: 8859659879535725528}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8859659878237838830
 MeshFilter:
@@ -159,6 +159,8 @@ MonoBehaviour:
   _gravity: 30
   _fallSpeed: 30
   _initFallSpeed: 5
+  GroundHeight: {fileID: 0}
+  myGameObject: {fileID: 8859659878237838739}
 --- !u!114 &1006246087855828394
 MonoBehaviour:
   m_ObjectHideFlags: 0
