@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -20,7 +21,8 @@ public class FireBullet : MonoBehaviour
     [Tooltip("’e")]
     public GameObject WaterSmall;
 
-    public Slider waterTank;
+    private Slider waterTank;
+    public string TankName;
 
     public Vector3 effectNormal;
 
@@ -30,6 +32,11 @@ public class FireBullet : MonoBehaviour
     private float speed = 30f;
 
     private bool _beam = false;
+
+    void Start()
+    {
+        waterTank = GameObject.Find(TankName).GetComponent<Slider>();
+    }
 
     // Update is called once per frame
     void Update()

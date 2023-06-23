@@ -17,7 +17,8 @@ public class MagicBeamStatic : MonoBehaviour
     public GameObject beamLineRendererPrefab; //Put a prefab with a line renderer onto here.
     //public GameObject beamStartPrefab; //This is a prefab that is put at the start of the beam.
     public GameObject beamEndPrefab; //Prefab put at end of beam.
-    public Slider waterTank;
+    private Slider waterTank;
+        public string TankName;
 
     //private GameObject beamStart;
     private GameObject beamEnd;
@@ -36,7 +37,13 @@ public class MagicBeamStatic : MonoBehaviour
                                             //Example: if texture is 200 pixels in height and 600 in length, set this to 
 
 
-    void FixedUpdate()
+        void Start()
+        {
+            waterTank = GameObject.Find(TankName).GetComponent<Slider>();
+            waterTank.value = 30.0f;
+        }
+
+        void FixedUpdate()
     {
             //ビームが発射されているかどうか
             if(Input.GetButton(fire2String)&& waterTank.value > 10.0f&&!_beam)
