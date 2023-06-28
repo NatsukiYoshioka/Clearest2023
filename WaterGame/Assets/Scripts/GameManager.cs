@@ -25,32 +25,88 @@ public class GameManager : MonoBehaviour
     private GameObject Player4;
 
     [SerializeField]
-    private GameObject SponePoint;
+    private GameObject Player1SponePoint;
+
+    [SerializeField]
+    private GameObject Player2SponePoint;
+
+    [SerializeField]
+    private GameObject Player3SponePoint;
+
+    [SerializeField]
+    private GameObject Player4SponePoint;
+
+    [SerializeField]
+    private GameObject RandamSponePoint;
 
     public GameObject Ground;
 
     private float Player1Count = 0;
+    private float Player2Count = 0;
+    private float Player3Count = 0;
+    private float Player4Count = 0;
+    void Start()
+    {
+        Instantiate(Player1, Player1SponePoint.transform.position, Quaternion.identity);
+        Instantiate(Player2, Player2SponePoint.transform.position, Quaternion.identity);
+        Instantiate(Player3, Player3SponePoint.transform.position, Quaternion.identity);
+        Instantiate(Player4, Player4SponePoint.transform.position, Quaternion.identity);
+    }
 
     // Update is called once per frame
     void Update()
     {
         float x = Random.Range(SponeMaxLeft, SponeMaxRight);
         float z = Random.Range(SponeMaxDown, SponeMaxUp);
-        SponePoint.transform.position = new Vector3(x, Ground.transform.position.y + 20, z);
+        RandamSponePoint.transform.position = new Vector3(x, Ground.transform.position.y + 20, z);
         CheckIsExists();
     }
 
     public void CheckIsExists()
     {
         var Player1Survive = GameObject.Find("Player1(Clone)");
+        var Player2Survive = GameObject.Find("Player2(Clone)");
+        var Player3Survive = GameObject.Find("Player3(Clone)");
+        var Player4Survive = GameObject.Find("Player4(Clone)");
+        
         if (Player1Survive==null && Player1Count == 0)
         {
             Player1Count = Time.time;
         }
         if(Player1Count!=0&&Time.time-Player1Count>=5.0f)
         {
-            Instantiate(Player1, SponePoint.transform.position, Quaternion.identity);
+            Instantiate(Player1, RandamSponePoint.transform.position, Quaternion.identity);
             Player1Count = 0;
+        }
+
+        if (Player2Survive == null && Player2Count == 0)
+        {
+            Player2Count = Time.time;
+        }
+        if (Player2Count != 0 && Time.time - Player2Count >= 5.0f)
+        {
+            Instantiate(Player2, RandamSponePoint.transform.position, Quaternion.identity);
+            Player2Count = 0;
+        }
+
+        if (Player3Survive == null && Player3Count == 0)
+        {
+            Player3Count = Time.time;
+        }
+        if (Player3Count != 0 && Time.time - Player3Count >= 5.0f)
+        {
+            Instantiate(Player3, RandamSponePoint.transform.position, Quaternion.identity);
+            Player3Count = 0;
+        }
+
+        if (Player4Survive == null && Player4Count == 0)
+        {
+            Player4Count = Time.time;
+        }
+        if (Player4Count != 0 && Time.time - Player4Count >= 5.0f)
+        {
+            Instantiate(Player4, RandamSponePoint.transform.position, Quaternion.identity);
+            Player4Count = 0;
         }
     }
 }
