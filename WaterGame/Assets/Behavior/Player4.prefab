@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7710714206689104809}
   m_Layer: 0
   m_Name: Player4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   _gravity: 30
   _fallSpeed: 30
   _initFallSpeed: 5
-  GroundHeight: {fileID: 0}
+  GroundHeight: {fileID: 473753169918300287, guid: 8f704a0e486970a4f9d0bfbf1d92db42, type: 3}
   myGameObject: {fileID: 8859659878237838739}
 --- !u!114 &1006246087855828394
 MonoBehaviour:
@@ -177,7 +177,7 @@ MonoBehaviour:
   fire2String: Fire2_4
   firingPoint: {fileID: 8859659879535725535}
   WaterSmall: {fileID: 6242087640740651954, guid: 7565cbe798f8f344587bfe641f80c185, type: 3}
-  waterTank: {fileID: 0}
+  TankName: Slider4
   effectNormal: {x: 0, y: 0, z: 0}
   waterFeed: 0.1
   speed: 30
@@ -194,9 +194,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire2String: Fire2_4
+  _PlayerSpeed: 8
   beamLineRendererPrefab: {fileID: 168570, guid: ec07888a514b39541adf58253e823576, type: 3}
   beamEndPrefab: {fileID: 133292, guid: 178ad29d4024e53498ac18be47447a1b, type: 3}
-  waterTank: {fileID: 0}
+  TankName: Slider4
   beamCollides: 1
   beamLength: 10
   beamEndOffset: 10

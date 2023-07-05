@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7710714206689104809}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fire2String: Fire2_1
+  _PlayerSpeed: 8
   beamLineRendererPrefab: {fileID: 168570, guid: ec07888a514b39541adf58253e823576, type: 3}
   beamEndPrefab: {fileID: 133292, guid: 178ad29d4024e53498ac18be47447a1b, type: 3}
   TankName: Slider

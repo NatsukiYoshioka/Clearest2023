@@ -42,6 +42,10 @@ public class PlayerController : MonoBehaviour
     //private Vector2 _inputMove;
     private float _verticalVelocity;
     private float _turnVelocity;
+    private float Slow = 1;
+    private Vector3 BeamDirection;
+    private Vector3 BeamPush;
+    private bool HitBeam = false;
     private bool _isGroundedPrev;
 
     /*
@@ -105,13 +109,22 @@ public class PlayerController : MonoBehaviour
                 _verticalVelocity = -_fallSpeed;
         }
 
+        if(Slow>1.0f)
+        {
+            Slow -= 1f / 180f;
+        }
+        if(Slow<=1.0f)
+        {
+            Slow = 1.0f;
+        }
+
         _isGroundedPrev = isGrounded;
         
         // 操作入力と鉛直方向速度から、現在速度を計算
         var moveVelocity = new Vector3(
-            _inputMove.x * _speed,
-            _verticalVelocity,
-            _inputMove.z * _speed
+            _inputMove.x * _speed/Slow,
+            _verticalVelocity/Slow,
+            _inputMove.z * _speed/Slow
         );
 
         // 現在フレームの移動量を移動速度から計算
@@ -119,6 +132,12 @@ public class PlayerController : MonoBehaviour
 
         // CharacterControllerに移動量を指定し、オブジェクトを動かす
         _characterController.Move(moveDelta);
+
+        if(HitBeam)
+        {
+            BeamPush = BeamDirection * _speed * 1.5f * Time.deltaTime;
+            _characterController.Move(BeamPush);
+        }
 
         if (_inputMove != Vector3.zero)
         {
@@ -144,6 +163,16 @@ public class PlayerController : MonoBehaviour
         if(GroundHeight.transform.position.y-10>_transform.position.y)
         {
             Destroy(myGameObject);
+        }
+    }
+
+    //水球を当てられたかどうか
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name=="WaterSmallObj")
+        {
+            Slow = 2f;
+            Debug.Log("hit");
         }
     }
 }
