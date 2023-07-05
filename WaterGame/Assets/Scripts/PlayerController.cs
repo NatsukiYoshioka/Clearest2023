@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
         if(Slow>1.0f)
         {
-            Slow -= 0.5f / 180f;
+            Slow -= 1f / 180f;
         }
         if(Slow<=1.0f)
         {
@@ -171,22 +171,8 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.name=="WaterSmallObj")
         {
-            Slow = 1.5f;
+            Slow = 2f;
             Debug.Log("hit");
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.name == "WaterBeamImpact(Clone)")
-        {
-            HitBeam = true;
-            BeamDirection = collision.gameObject.transform.forward;
-            Debug.Log("hit");
-        }
-        else
-        {
-            HitBeam = false;
         }
     }
 }

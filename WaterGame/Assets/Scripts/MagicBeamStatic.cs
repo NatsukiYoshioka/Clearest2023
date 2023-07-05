@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.UI;
 
 namespace Scripts
@@ -12,6 +13,9 @@ public class MagicBeamStatic : MonoBehaviour
 
         [SerializeField]
         private string fire2String;
+
+        [SerializeField]
+        private float _PlayerSpeed;
 
         [Header("Prefabs")]
     public GameObject beamLineRendererPrefab; //Put a prefab with a line renderer onto here.
@@ -65,12 +69,19 @@ public class MagicBeamStatic : MonoBehaviour
                 RemoveBeam();
             }
             line.SetPosition(0, transform.position);
-
-            RaycastHit hit;
+                
+                RaycastHit hit;
                 if (beamCollides && Physics.Raycast(transform.position, transform.forward, out hit)) //Checks for collision
+                {
                     end = hit.point; //- (transform.forward * beamEndOffset);
-            else
-                end = transform.position + (transform.forward * beamLength);
+                    float hitDistance = Vector3.Distance(transform.position, end);
+                    if (hit.collider.gameObject.tag=="Player"&&hitDistance<=10f)
+                    {
+                        hit.collider.transform.position += transform.forward * Time.deltaTime * _PlayerSpeed * 2f;
+                    }
+                }
+                else
+                    end = transform.position + (transform.forward * beamLength);
 
                 float distance = Vector3.Distance(transform.position, end);
                 if(distance>10f)
@@ -149,5 +160,5 @@ public class MagicBeamStatic : MonoBehaviour
         if (beamEnd)
             Destroy(beamEnd);
     }
-}
+    }
 }
