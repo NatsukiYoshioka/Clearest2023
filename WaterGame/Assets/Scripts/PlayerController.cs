@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private float _verticalVelocity;
     private float _turnVelocity;
     private bool _isGroundedPrev;
-
+    private Animator _anim;
     /*
     /// <summary>
     /// 移動Action(PlayerInput側から呼ばれる)
@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60; // 60fpsに設定
         _transform = transform;
         _characterController = GetComponent<CharacterController>();
+        _anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -116,7 +117,8 @@ public class PlayerController : MonoBehaviour
 
         // 現在フレームの移動量を移動速度から計算
         var moveDelta = moveVelocity * Time.deltaTime;
-
+        //プレイヤーからの入力があるtrueないfalse
+        _anim.SetBool("Run", _inputMove.x != 0.0f);
         // CharacterControllerに移動量を指定し、オブジェクトを動かす
         _characterController.Move(moveDelta);
 
