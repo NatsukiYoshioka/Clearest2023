@@ -43,9 +43,7 @@ public class PlayerController : MonoBehaviour
     private float _verticalVelocity;
     private float _turnVelocity;
     private float Slow = 1;
-    private Vector3 BeamDirection;
-    private Vector3 BeamPush;
-    private bool HitBeam = false;
+    private float RecoverNameTime = 0f;
     private bool _isGroundedPrev;
 
     /*
@@ -133,12 +131,6 @@ public class PlayerController : MonoBehaviour
         // CharacterControllerに移動量を指定し、オブジェクトを動かす
         _characterController.Move(moveDelta);
 
-        if(HitBeam)
-        {
-            BeamPush = BeamDirection * _speed * 1.5f * Time.deltaTime;
-            _characterController.Move(BeamPush);
-        }
-
         if (_inputMove != Vector3.zero)
         {
             
@@ -160,8 +152,36 @@ public class PlayerController : MonoBehaviour
             _transform.rotation = Quaternion.Euler(0, angleY, 0);
         }
 
+        if(myGameObject.transform.GetChild(2).gameObject.transform.name!="BeamHitName"&&RecoverNameTime==0)
+        {
+            RecoverNameTime = Time.time;
+        }
+        if(Time.time-RecoverNameTime>=3.0f)
+        {
+            myGameObject.transform.GetChild(2).gameObject.transform.name = "BeamHitName";
+            RecoverNameTime = 0f;
+        }
+
         if(GroundHeight.transform.position.y-10>_transform.position.y)
         {
+            GameManager gamemanager;
+            GameObject manager= GameObject.Find("GameManager");
+            gamemanager = manager.GetComponent<GameManager>();
+            switch(myGameObject.transform.GetChild(2).gameObject.transform.name)
+            {
+                case "Player1":
+                    gamemanager.Player1Point++;
+                    break;
+                case "Player2":
+                    gamemanager.Player2Point++;
+                    break;
+                case "Player3":
+                    gamemanager.Player3Point++;
+                    break;
+                case "Player4":
+                    gamemanager.Player4Point++;
+                    break;
+            }
             Destroy(myGameObject);
         }
     }
@@ -169,8 +189,23 @@ public class PlayerController : MonoBehaviour
     //水球を当てられたかどうか
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name=="WaterSmallObj")
+        if(collision.gameObject.tag=="Ball")
         {
+            switch(collision.gameObject.name)
+            {
+                case "Player1":
+                    myGameObject.transform.GetChild(2).gameObject.transform.name = "Player1";
+                    break;
+                case "Player2":
+                    myGameObject.transform.GetChild(2).gameObject.transform.name = "Player2";
+                    break;
+                case "Player3":
+                    myGameObject.transform.GetChild(2).gameObject.transform.name = "Player3";
+                    break;
+                case "Player4":
+                    myGameObject.transform.GetChild(2).gameObject.transform.name = "Player4";
+                    break;
+            }
             Slow = 2f;
             Debug.Log("hit");
         }

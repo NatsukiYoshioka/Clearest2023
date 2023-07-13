@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8087954883479402804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3414702430117178392}
+  m_Layer: 0
+  m_Name: BeamHItName
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3414702430117178392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8087954883479402804}
+  m_LocalRotation: {x: -0, y: -0.026713466, z: -0, w: 0.99964315}
+  m_LocalPosition: {x: -0.0029235694, y: 0.00000011920929, z: 0.054662302}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8859659878237838831}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8859659878237838739
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,8 +68,9 @@ Transform:
   m_Children:
   - {fileID: 8859659879704996331}
   - {fileID: 8859659879535725528}
+  - {fileID: 3414702430117178392}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8859659878237838830
 MeshFilter:
@@ -181,6 +213,7 @@ MonoBehaviour:
   effectNormal: {x: 0, y: 0, z: 0}
   waterFeed: 0.1
   speed: 30
+  _Fire1String: Player1
 --- !u!114 &7710714206689104809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire2String: Fire2_1
   _PlayerSpeed: 8
+  _Fire2String: Player1
   beamLineRendererPrefab: {fileID: 168570, guid: ec07888a514b39541adf58253e823576, type: 3}
   beamEndPrefab: {fileID: 133292, guid: 178ad29d4024e53498ac18be47447a1b, type: 3}
   TankName: Slider

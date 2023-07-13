@@ -37,8 +37,9 @@ Transform:
   m_Children:
   - {fileID: 8859659879704996331}
   - {fileID: 8859659879535725528}
+  - {fileID: 1579624069766680740}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8859659878237838830
 MeshFilter:
@@ -181,6 +182,7 @@ MonoBehaviour:
   effectNormal: {x: 0, y: 0, z: 0}
   waterFeed: 0.1
   speed: 30
+  _Fire1String: Player3
 --- !u!114 &7710714206689104809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fire2String: Fire2_3
   _PlayerSpeed: 8
+  _Fire2String: Player3
   beamLineRendererPrefab: {fileID: 168570, guid: ec07888a514b39541adf58253e823576, type: 3}
   beamEndPrefab: {fileID: 133292, guid: 178ad29d4024e53498ac18be47447a1b, type: 3}
   TankName: Slider3
@@ -339,3 +342,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &9213326057887934012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579624069766680740}
+  m_Layer: 0
+  m_Name: BeanHitName
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1579624069766680740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213326057887934012}
+  m_LocalRotation: {x: -0, y: -0.026713466, z: -0, w: 0.99964315}
+  m_LocalPosition: {x: -0.002923595, y: 0.00000011920929, z: 0.05466278}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8859659878237838831}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

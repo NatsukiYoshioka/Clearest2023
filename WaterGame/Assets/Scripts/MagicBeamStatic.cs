@@ -11,18 +11,21 @@ namespace Scripts
 public class MagicBeamStatic : MonoBehaviour
 {
 
-        [SerializeField]
-        private string fire2String;
+    [SerializeField]
+    private string fire2String;
 
-        [SerializeField]
-        private float _PlayerSpeed;
+    [SerializeField]
+    private float _PlayerSpeed;
 
-        [Header("Prefabs")]
+    [SerializeField]
+    private string _Fire2String;
+
+    [Header("Prefabs")]
     public GameObject beamLineRendererPrefab; //Put a prefab with a line renderer onto here.
     //public GameObject beamStartPrefab; //This is a prefab that is put at the start of the beam.
     public GameObject beamEndPrefab; //Prefab put at end of beam.
     private Slider waterTank;
-        public string TankName;
+    public string TankName;
 
     //private GameObject beamStart;
     private GameObject beamEnd;
@@ -40,26 +43,26 @@ public class MagicBeamStatic : MonoBehaviour
     public float textureLengthScale = 1f;   //Set this to the horizontal length of your texture relative to the vertical. 
                                             //Example: if texture is 200 pixels in height and 600 in length, set this to 
 
+    void Start()
+    {
+        waterTank = GameObject.Find(TankName).GetComponent<Slider>();
+        waterTank.value = 30.0f;
+    }
 
-        void Start()
+    void FixedUpdate()
+    {
+        //ビームが発射されているかどうか
+        if(Input.GetButton(fire2String)&& waterTank.value > 10.0f&&!_beam)
         {
-            waterTank = GameObject.Find(TankName).GetComponent<Slider>();
-            waterTank.value = 30.0f;
+            SpawnBeam();
+            _beam = true;
+        }
+        if(!Input.GetButton(fire2String))
+        {
+            RemoveBeam();
+            _beam=false;
         }
 
-        void FixedUpdate()
-    {
-            //ビームが発射されているかどうか
-            if(Input.GetButton(fire2String)&& waterTank.value > 10.0f&&!_beam)
-            {
-                SpawnBeam();
-                _beam = true;
-            }
-            if(!Input.GetButton(fire2String))
-            {
-                RemoveBeam();
-                _beam=false;
-            }
         if (beam) //Updates the beam
         {
             waterTank.value -= 0.3f;
@@ -70,32 +73,28 @@ public class MagicBeamStatic : MonoBehaviour
             }
             line.SetPosition(0, transform.position);
                 
-                RaycastHit hit;
-                if (beamCollides && Physics.Raycast(transform.position, transform.forward, out hit)) //Checks for collision
-                {
-                    end = hit.point; //- (transform.forward * beamEndOffset);
-                    float hitDistance = Vector3.Distance(transform.position, end);
-                    if (hit.collider.gameObject.tag=="Player"&&hitDistance<=10f)
-                    {
-                        hit.collider.transform.position += transform.forward * Time.deltaTime * _PlayerSpeed * 2f;
-                    }
-                }
-                else
-                    end = transform.position + (transform.forward * beamLength);
-
-                float distance = Vector3.Distance(transform.position, end);
-                if(distance>10f)
-                {
-                    end = transform.position + (transform.forward * beamLength);
-                }
-                line.SetPosition(1, end);
-            /*
-            if (beamStart)
+            RaycastHit hit;
+            if (beamCollides && Physics.Raycast(transform.position, transform.forward, out hit)) //Checks for collision
             {
-                beamStart.transform.position = transform.position;
-                beamStart.transform.LookAt(end);
+                end = hit.point; //- (transform.forward * beamEndOffset);
+                float hitDistance = Vector3.Distance(transform.position, end);
+                if (hit.collider.gameObject.tag=="Player"&&hitDistance<=10f)
+                {
+                    //当てた相手の押し出し
+                    hit.collider.transform.position += transform.forward * Time.deltaTime * _PlayerSpeed * 2f;
+                    hit.collider.transform.GetChild(2).gameObject.name = _Fire2String;
+                }
             }
-            */
+            else
+                end = transform.position + (transform.forward * beamLength);
+
+            float distance = Vector3.Distance(transform.position, end);
+            if(distance>10f)
+            {
+                end = transform.position + (transform.forward * beamLength);
+            }
+            line.SetPosition(1, end);
+            
             if (beamEnd)
             {
                 beamEnd.transform.position = end;
@@ -127,7 +126,7 @@ public class MagicBeamStatic : MonoBehaviour
         */
 
 
-        public void SpawnBeam() //This function spawns the prefab with linerenderer
+    public void SpawnBeam() //This function spawns the prefab with linerenderer
     {
         if (beamLineRendererPrefab)
         {
@@ -153,10 +152,7 @@ public class MagicBeamStatic : MonoBehaviour
     {
         if (beam)
             Destroy(beam);
-        /*
-        if (beamStart)
-            Destroy(beamStart);
-        */
+        
         if (beamEnd)
             Destroy(beamEnd);
     }

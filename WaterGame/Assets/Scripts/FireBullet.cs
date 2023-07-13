@@ -31,6 +31,9 @@ public class FireBullet : MonoBehaviour
     [Tooltip("弾の速さ")]
     private float speed = 30f;
 
+    [SerializeField]
+    private string _Fire1String;
+
     private bool _beam = false;
 
     void Start()
@@ -111,6 +114,8 @@ public class FireBullet : MonoBehaviour
         Vector3 bulletPosition = firingPoint.transform.position;
         // 上で取得した場所に、"bullet"のPrefabを出現させる
         GameObject newBall = Instantiate(WaterSmall, bulletPosition, transform.rotation);
+        //出した弾を出したプレイヤーの名前に変更
+        WaterSmall.gameObject.name = _Fire1String;
         // 出現させたボールのforward(z軸方向)
         Vector3 direction = newBall.transform.forward;
         // 弾の発射方向にnewBallのz方向(ローカル座標)を入れ、弾オブジェクトのrigidbodyに衝撃力を加える

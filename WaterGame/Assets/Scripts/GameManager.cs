@@ -39,12 +39,25 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject RandamSponePoint;
 
-    public GameObject Ground;
+    [Header("’n–Ê‚ÌˆÊ’u"), SerializeField]
+    private GameObject GroundHeight;
 
     private float Player1Count = 0;
     private float Player2Count = 0;
     private float Player3Count = 0;
     private float Player4Count = 0;
+
+    [System.NonSerialized]
+    public int Player1Point = 0;
+
+    [System.NonSerialized]
+    public int Player2Point = 0;
+
+    [System.NonSerialized]
+    public int Player3Point = 0;
+
+    [System.NonSerialized]
+    public int Player4Point = 0;
     void Start()
     {
         Instantiate(Player1, Player1SponePoint.transform.position, Quaternion.identity);
@@ -58,7 +71,7 @@ public class GameManager : MonoBehaviour
     {
         float x = Random.Range(SponeMaxLeft, SponeMaxRight);
         float z = Random.Range(SponeMaxDown, SponeMaxUp);
-        RandamSponePoint.transform.position = new Vector3(x, Ground.transform.position.y + 20, z);
+        RandamSponePoint.transform.position = new Vector3(x, GroundHeight.transform.position.y + 20, z);
         CheckIsExists();
     }
 
@@ -68,7 +81,7 @@ public class GameManager : MonoBehaviour
         var Player2Survive = GameObject.Find("Player2(Clone)");
         var Player3Survive = GameObject.Find("Player3(Clone)");
         var Player4Survive = GameObject.Find("Player4(Clone)");
-        
+
         if (Player1Survive==null && Player1Count == 0)
         {
             Player1Count = Time.time;
@@ -82,6 +95,7 @@ public class GameManager : MonoBehaviour
         if (Player2Survive == null && Player2Count == 0)
         {
             Player2Count = Time.time;
+            Debug.Log(Player1Point);
         }
         if (Player2Count != 0 && Time.time - Player2Count >= 5.0f)
         {
